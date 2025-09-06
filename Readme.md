@@ -1,67 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steps to Start the Chatbot</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      background: #f4faff;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #005f73;
-    }
-    code {
-      background: #e6f7ff;
-      padding: 2px 5px;
-      border-radius: 5px;
-      font-family: monospace;
-    }
-    pre {
-      background: #e6f7ff;
-      padding: 10px;
-      border-radius: 8px;
-      overflow-x: auto;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
 <body>
-  <div class="container">
-    <h1>Steps to Start the Chatbot</h1>
-    <p>Follow these step-by-step instructions to set up and start the chatbot project.</p>
 
-    <h2>1. Set Up the Project Folder Structure</h2>
-    <p>Ensure the following folder structure is in place:</p>
-    <pre>
+  <h3>Steps to Start the Chatbot</h3>
+
+  <p>Follow these step-by-step instructions to set up and start the chatbot project.</p>
+
+  <h4>1. <strong>Set Up the Project Folder Structure</strong></h4>
+  <p>Ensure the following folder structure is in place:</p>
+  <pre><code>
 /chatbot_project
   /static
-    index.html  <-- Place your HTML file here
-  app.py         <-- Flask server code
-  chatbot.py     <-- Optional, backend logic for chatbot
-    </pre>
+    index.html  &lt;-- Place your HTML file here
+  app.py         &lt;-- Flask server code
+  chatbot.py     &lt;-- Optional, backend logic for chatbot
+  </code></pre>
 
-    <h2>2. Install Python and Required Libraries</h2>
-    <p>Make sure Python is installed on your system. If not, download it from 
-      <a href="https://www.python.org/" target="_blank">python.org</a>.
-    </p>
-    <p>Next, install Flask by running this command:</p>
-    <pre><code>pip install flask</code></pre>
+  <h4>2. <strong>Install Python and Required Libraries</strong></h4>
+  <p>Make sure Python is installed on your system. If not, download it from 
+    <a href="https://www.python.org/">python.org</a>.
+  </p>
+  <p>Next, install Flask by running this command in your terminal or command prompt:</p>
+  <pre><code>pip install flask</code></pre>
 
-    <h2>3. Write the Files</h2>
-    <p><strong>app.py</strong>: Copy the following code:</p>
-    <pre><code>from flask import Flask, request, jsonify
+  <h4>3. <strong>Write the Files</strong></h4>
+  <ul>
+    <li><strong>app.py</strong>: This file contains the Flask server logic. Copy the following code into your <code>app.py</code> file:</li>
+  </ul>
+  <pre><code>from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -71,53 +35,61 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5500)
-</code></pre>
+  </code></pre>
 
-    <p><strong>static/index.html</strong>: Add your chatbot UI code here.</p>
+  <ul>
+    <li><strong>static/index.html</strong>: This file is your chatbot’s frontend interface. Add your chatbot UI code here.</li>
+  </ul>
 
-    <h2>4. Run the Flask Server</h2>
-    <ol>
-      <li>Open a terminal or command prompt.</li>
-      <li>Navigate to the project directory:
-        <pre><code>cd /path/to/chatbot_project</code></pre>
-      </li>
-      <li>Start the Flask server:
-        <pre><code>python app.py</code></pre>
-      </li>
-      <li>You should see:
-        <pre><code>Running on http://127.0.0.1:5500/</code></pre>
-      </li>
-    </ol>
+  <h4>4. <strong>Run the Flask Server</strong></h4>
+  <ol>
+    <li>Open a terminal or command prompt.</li>
+    <li>Navigate to the project directory using:
+      <pre><code>cd /path/to/chatbot_project</code></pre>
+    </li>
+    <li>Start the Flask server by running:
+      <pre><code>python app.py</code></pre>
+    </li>
+    <li>You should see output like:
+      <pre><code>Running on http://127.0.0.1:5500/</code></pre>
+    </li>
+  </ol>
 
-    <h2>5. Access the Chatbot in a Browser</h2>
-    <p>Open your browser and go to:</p>
-    <pre><code>http://127.0.0.1:5500/</code></pre>
+  <h4>5. <strong>Access the Chatbot in a Browser</strong></h4>
+  <ul>
+    <li>Open your web browser.</li>
+    <li>Enter the following URL:
+      <pre><code>http://127.0.0.1:5500/</code></pre>
+    </li>
+    <li>The chatbot interface from <code>index.html</code> should load.</li>
+  </ul>
 
-    <h2>6. Troubleshooting</h2>
-    <ul>
-      <li>If you see <code>404 Not Found</code>, make sure:
-        <ul>
-          <li><code>index.html</code> is inside the <code>/static</code> folder</li>
-          <li><code>app.py</code> points to the correct static folder</li>
-        </ul>
-      </li>
-      <li>Restart the Flask server after making changes.</li>
-    </ul>
+  <h4>6. <strong>Troubleshooting</strong></h4>
+  <ul>
+    <li>If you encounter a <code>404 Not Found</code> error, ensure:
+      <ul>
+        <li>The <code>index.html</code> file is inside the <code>/static</code> folder.</li>
+        <li>Your <code>app.py</code> file points to the correct static folder.</li>
+      </ul>
+    </li>
+    <li>Restart the Flask server after making any changes to your files.</li>
+  </ul>
 
-    <h2>7. Optional: Modify the Chatbot Logic</h2>
-    <p>Add chatbot logic in <code>chatbot.py</code> and link it with <code>app.py</code>:</p>
-    <pre><code>@app.route("/chat", methods=["POST"])
+  <h4>7. <strong>Optional: Modify the Chatbot Logic</strong></h4>
+  <p>If you want to add chatbot functionality, write the logic in <code>chatbot.py</code> and integrate it into <code>app.py</code>. For example:</p>
+  <pre><code>@app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("message")
     response = generate_response(user_message)  # Your chatbot logic here
     return jsonify({"reply": response})
-</code></pre>
+  </code></pre>
 
-    <h2>8. Stop the Server</h2>
-    <p>Press <code>Ctrl + C</code> in the terminal to stop the Flask server.</p>
+  <h4>8. <strong>Stop the Server</strong></h4>
+  <ul>
+    <li>To stop the Flask server, press <code>Ctrl + C</code> in the terminal.</li>
+  </ul>
 
-    <hr>
-    <p><strong>By following these steps, you can successfully set up, run, and interact with your chatbot!</strong></p>
-  </div>
+  <hr>
+  <p>By following these steps, you can successfully set up, run, and interact with your chatbot!</p>
+
 </body>
-</html>
